@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Hello</h2>
+    <div class="container">
+        <table class="table table-success table-striped">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Musician Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Album Rating</th>
+                <th scope="col">Instrument Type</th>
+                <th scope="col">Album Name</th>
+                <th scope="col">Release Date</th>
+                <th scope="col">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+                {% for dt in data %}
+                <tr>
+                    <td>{{dt.id}}</td>
+                    <td>{{dt.first_name}}</td>
+                    <td>{{dt.email}}</td>
+                    {% for musi in dt.album.all %}
+                      <td>{{musi.rating}}</td>
+                      <td>{{dt.instrument_type}}</td>
+                      <td>{{musi.album_name}}</td>
+                      <td>{{musi.release_date}}</td>
+                    {%endfor%} 
+                    <td>
+                      <a href="#" class="btn btn-primary">Edit</a>
+                      <a href="#" class="btn btn-warning">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+         
+            </tbody>
+          </table>
+    </div>
+   
+{% endblock content %}
