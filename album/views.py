@@ -19,7 +19,7 @@ class AddAlbumCreateView(SuccessMessageMixin,CreateView):
     model = models.AlbumModel
     form_class = forms.AlbumForm
     template_name = 'add_album.html'
-    success_url = 'home'
+    success_url = '/'
     success_message = 'Album Created Successfully'
     def form_valid(self, form):
         # form.instance.author = self.request.user
@@ -32,7 +32,7 @@ class EditAlbumCreateView(SuccessMessageMixin, UpdateView):
     template_name = 'add_album.html'
     pk_url_kwarg = 'id'
     success_message = 'Album Edited Successfully'
-    success_url = 'home'
+    success_url = '/'
 
 
 

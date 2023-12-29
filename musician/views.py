@@ -29,23 +29,33 @@ def register(request):
         register_form = forms.RegistrationForm()
     return render(request, 'register.html',{'form':register_form, 'type':'Register'})
 
+
+
 class UserLoginView(LoginView):
     template_name = 'register.html'
-    success_url = reverse_lazy('musician:user_profile')
 
     def form_valid(self,form):
-        messages.success(self.request, 'Logged in Successful')
+        messages.success(self.request, 'Login Successfully!')
         return super().form_valid(form)
     
     def form_invalid(self, form):
-        messages.success(self.request, 'Logged in Information Incorrect')
+        messages.success(self.request, 'Login Information Incorrect!')
         return super().form_invalid(form)
-    
+        
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['type'] = 'Login'
         return context
     
+    def get_success_url(self): 
+        return reverse_lazy('my_profile')
+    
+
+
+
+
+
+
 @login_required
 def user_profile(request):
     return render(request, 'user_profile.html',{'user':request.user})
@@ -61,7 +71,7 @@ class AddMusicianCreateView(SuccessMessageMixin,CreateView):
     model = models.MusicialModel
     form_class = forms.MusicianForm
     template_name = 'add_musician.html'
-    success_url = '/musician/profile'
+    success_url = '/'
     success_message = 'Musician Created Successfully'
     def form_valid(self, form):
         # form.instance.author = self.request.user
@@ -74,7 +84,7 @@ class EditMusicianCreateView(SuccessMessageMixin, UpdateView):
     template_name = 'add_musician.html'
     pk_url_kwarg = 'id'
     success_message = 'Post Edited Successfully'
-    success_url = '/musician/profile'
+    success_url = '/'
 
 
 
