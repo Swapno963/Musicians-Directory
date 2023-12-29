@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title>Musice_Conrner</title>
   </head>
   <body>
   
@@ -16,20 +16,20 @@
     {% comment %} navbar {% endcomment %}
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">Navbar</a>
+          <a class="navbar-brand fw-bold ps-5" href="#">Musice_Conrner</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav m-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active btn btn-primary fw-bold text-white " aria-current="page" href="{% url 'home'%}">Home</a>
+                <a class="nav-link active btn btn-primary fw-bold text-white mx-2" aria-current="page" href="{% url 'home'%}">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active btn btn-danger fw-bold text-white mx-2" aria-current="page" href="{% url 'add_musician'%}">Add Musican</a>
+                <a class="nav-link active btn btn-primary fw-bold text-white mx-2" aria-current="page" href="{% url 'add_musician'%}">Add Musican</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active btn btn-danger fw-bold text-white mx-2" aria-current="page" href="{% url 'add_album'%}">Add Album</a>
+                <a class="nav-link active btn btn-primary fw-bold text-white mx-2" aria-current="page" href="{% url 'add_album'%}">Add Album</a>
               </li>
               {% comment %} {% if request.user.is_authenticated %}
                 <li class="nav-item">
