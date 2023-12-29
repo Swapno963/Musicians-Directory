@@ -20,7 +20,12 @@
                 {% for dt in data %}
                 <tr>
                     <td>{{dt.id}}</td>
-                    <td>{{dt.first_name}}</td>
+                    <td>
+                      <a class='text-decoration-none' href="{% url 'edit_musician' dt.id %}">
+                        {{dt.first_name}}
+
+                      </a>
+                    </td>
                     <td>{{dt.email}}</td>
                     {% for musi in dt.album.all %}
                       <td>{{musi.rating}}</td>
@@ -29,8 +34,8 @@
                       <td>{{musi.release_date}}</td>
                     {%endfor%} 
                     <td>
-                      <a href="{% url 'edit_musician' dt.id %}" class="btn btn-primary">Edit</a>
-                      <a href="{% url 'delete_musician' dt.id %}" class="btn btn-danger">Delate</a>
+                      <a href="{% url 'edit_album' dt.id %}" class="btn btn-primary">Edit</a>
+                      <a href="{% url 'delete_album' dt.id %}" class="btn btn-danger">Delate</a>
                     </td>
                 </tr>
                 {% endfor %}

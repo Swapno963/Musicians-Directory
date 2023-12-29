@@ -85,3 +85,4 @@ class DeleteMusicianView(SuccessMessageMixin, DeleteView):
     success_message = 'Post Deleted Successfully'
     success_url = reverse_lazy('home')
     pk_url_kwarg = 'id'
+    

@@ -21,5 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.home, name='home'),
     path('musician/', include('musician.urls')),
+    path('album/', include('album.urls')),
     # path('',views.MusicialDetailView.as_view(), name='home2'),
 ]
