@@ -39,7 +39,16 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'musician',
     'album',
+    'crispy_forms',
+    'crispy_bootstrap5',
 ]
+
+
+LOGIN_URL ='/musician/login'
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap5'
+CRISPY_TEMPLATE_PACK = 'bootstrap5'
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

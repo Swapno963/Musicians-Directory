@@ -29,8 +29,8 @@
                       <td>{{musi.release_date}}</td>
                     {%endfor%} 
                     <td>
-                      <a href="#" class="btn btn-primary">Edit</a>
-                      <a href="#" class="btn btn-warning">Delete</a>
+                      <a href="{% url 'edit_musician' dt.id %}" class="btn btn-primary">Edit</a>
+                      <a href="{% url 'delete_musician' dt.id %}" class="btn btn-danger">Delate</a>
                     </td>
                 </tr>
                 {% endfor %}
